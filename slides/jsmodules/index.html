@@ -45,11 +45,10 @@
 			<div class="slides">
 				<section>
 					<h1>The JavaScript Module Pattern and Why You Should Care</h1>
-					<!-- <h3>HTML Presentations Made Easy</h3> -->
 					<p>
 						<small>Created by <a href="www.linkedin.com/in/markdyhr">Mark Dyhr</a> / 
-						<a href="http://twitter.com/controld">@controld</a></small>
-						<a href="http://controld.github.io/slides/index.html">github</a>
+						<a href="http://twitter.com/controld">@controld</a> /
+						<a href="http://controld.github.io/slides/index.html">github</a></small>
 					</p>
 				</section>
 
@@ -60,7 +59,7 @@
 					<a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">
 					Learning JavaScript Design Patterns
 					</a>
-					, Addy Osmani claims a Richard Cornford, and others, devised an early version of the JavaScript module pattern in 2003.
+					, Addy Osmani states that Richard Cornford, and others, devised an early version of the JavaScript module pattern in 2003.
 					Subsequently, Douglas Crockford, possibly JavaScript's greatest cheerleader, championed the module pattern and
 					it became a fundamental building block for the YUI library.
 					</p>
@@ -91,7 +90,7 @@ anObjectLiteral.dumpMe();
 						
 					</section>
 					<section>
-						<h3>Notes:</h3>
+						<h3>Object literal properties:</h3>
 						<pre>
 						<code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var anObjectLiteral = {
@@ -149,9 +148,9 @@ motivation: Facebook acquisition
 						You may at some point be called upon to determine whether an object literal is "empty,"
 						meaning no properties have been added to it since its initial creation.
 						The following object literal is empty:
-						<pre><code>var emptyObj = {};</code></pre><br />
+						var emptyObj = {};
 						However, to test <code>emptyObj</code> for emptiness, you need to do a special test.
-						You see, {} is neither <pre>null</pre> nor <pre>=== typeof 'undefined'</pre>.
+						You see, {} is neither null nor === typeof 'undefined'.
 						It's pre-populated with several properties by the JavaScript interpreter. The following
 						code snippet determines whether or not only these pre-populated properties are in the
 						object or additional properties have been added.
@@ -258,7 +257,7 @@ MySpace.namespace('MySpace.area51.saucers.roswell');
 				<section>
 					<h3>The namespace function:</h3>
 					<ul>
-						<li>Let's us create namespaces of arbitrary depth</li>
+						<li>Lets us create namespaces of arbitrary depth</li>
 						<li>Preserves any existing namespace elements</li>
 						<li>Allows us to structure and organize our JavaScript using only one global variable</li>
 					</ul>
@@ -294,7 +293,7 @@ MySpace.myMod = (function () {
 
 				<section>
 					<h3></h3>
-					<p style="font-size: 28px;">A bigger, badder module:</p>
+					<p style="font-size: 28px;">A bigger, badder module (we are not alone):</p>
 					<pre><code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 MySpace.namespace('MySpace.area51');
 MySpace.area51 = (function () {
@@ -360,7 +359,24 @@ $(function () { // won't be called until assets are loaded. REQUIRES jQuery
 				</code></pre>
 				</section>
 				<section>
-				<h3></h3>
+				<h3>References</h3>
+					<h5>Links</h5>
+					<a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/" class="group">Learning JavaScript Design Patterns - Addy Osmani</a>
+					<a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html" class="group">
+						JavaScript Module Pattern: In-Depth - Ben Cherry
+					</a>
+					<a href="http://briancray.com/posts/javascript-module-pattern" class="group">Javascript module pattern: When to use it and why - Brian Cray</a>
+					<a href="http://snook.ca/archives/javascript/no-love-for-module-pattern" class="group">Why I don't love JavaScript's Module Pattern - Jonathan Snook</a>
+					<a href="http://viralpatel.net/blogs/javascript-module-pattern/" class="group">JavaScript Module Design Pattern - Aditya Jain</a>
+					<br />
+				<h5>Books</h5>	
+					<a href="http://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691" class="group">
+					Professional JavaScript for Web Developers - Nicolas Zakas
+					</a>
+					<a href="http://shop.oreilly.com/product/0636920025245.do" class="group">
+						 Maintainable JavaScript Writing Readable Code - Nicolas Zakas
+					</a>
+					<a href="http://shop.oreilly.com/product/9780596806767.do" class="group">JavaScript Patterns - Stoyan Stefanov</a>
 				</section>
 				<!-- <section data-markdown>
 				
@@ -398,6 +414,7 @@ $(function () { // won't be called until assets are loaded. REQUIRES jQuery
 					</p>
 				</section>
 -->
+<!--
 				<section id="themes">
 					<h2>Themes</h2>
 					<p>
@@ -586,7 +603,7 @@ function linkify( selector ) {
 			</div>
 
 		</div>
-
+-->
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 
