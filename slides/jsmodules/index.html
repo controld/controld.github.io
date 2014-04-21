@@ -20,6 +20,13 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+<style type="text/css">
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -67,23 +74,14 @@
 				<section>
 					<section>
 						<h2>In the Beginning: the object literal</h2>
-						<!-- <p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-							
-						</p> -->
 						<pre>
-						<code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+						<code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var anObjectLiteral = {
     name: 'Object Literal',
     size: 42,
     motivation: 'Internet fame',
     dumpMe: function () {
-        if ('undefined' !== typeof alert) {
-            alert('name: ' + this.name + ' size: ' + this.size + ' motivation: ' + this.motivation);
-        } else {
-            console.log('name: ' + this.name + ' size: ' + this.size + ' motivation: ' + this.motivation);
-        }
+        console.log('name: ' + this.name + ' size: ' + this.size + ' motivation: ' + this.motivation);
     }
 };
 anObjectLiteral.dumpMe();
@@ -91,24 +89,17 @@ anObjectLiteral.dumpMe();
 						</code>
 						</pre>
 						
-						<!-- <a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a> -->
 					</section>
 					<section>
 						<h3>Notes:</h3>
 						<pre>
-						<code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+						<code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var anObjectLiteral = {
     name: 'Object Literal',
     size: 42,
     motivation: 'Internet fame',
     dumpMe: function () {
-        if ('undefined' !== typeof alert) {
-            alert('name: ' + this.name + ' size: ' + this.size + ' motivation: ' + this.motivation);
-        } else {
-            console.log('name:\t    ' + this.name + '\nsize: \t    ' + this.size + '\nmotivation: ' + this.motivation);
-        }
+        console.log('name:\t    ' + this.name + '\nsize: \t    ' + this.size + '\nmotivation: ' + this.motivation);
     }
 };
 anObjectLiteral.dumpMe();
@@ -142,20 +133,15 @@ motivation: Facebook acquisition
 					</section>
 					<section>
 						<h3>References:</h3>
-						<a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">
+						<a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript" class="group">
 						Addy Osmani's treatment of the JavaScript module pattern
 						</a>
-						<a href"https://groups.google.com/forum/#!msg/comp.lang.javascript/eTzWVa1W_pE/N9lnvRG9WJ8J">
-						The 2003 Richard Cornford post on a JavaScript module pattern
+						<a href="https://groups.google.com/forum/#!msg/comp.lang.javascript/eTzWVa1W_pE/N9lnvRG9WJ8J" class="group">
+						Richard Cornford post on a JavaScript module pattern, 2003
 						</a>
-						<a href="http://rmurphey.com/blog/2009/10/15/using-objects-to-organize-your-code/">
+						<a href="http://rmurphey.com/blog/2009/10/15/using-objects-to-organize-your-code/" class="group">
 						Rebecca Murphey on JavaScript object literals
 						</a>
-						<!-- <h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a> -->
 					</section>
 					<section>
 						<h3>Testing for an "empty" object literal</h3>
@@ -163,15 +149,15 @@ motivation: Facebook acquisition
 						You may at some point be called upon to determine whether an object literal is "empty,"
 						meaning no properties have been added to it since its initial creation.
 						The following object literal is empty:
-						<code><pre>var emptyObj = {};</pre></code><br />
+						<pre><code>var emptyObj = {};</code></pre><br />
 						However, to test <code>emptyObj</code> for emptiness, you need to do a special test.
-						You see, {} is neither <code>null</code> nor <code>=== typeof 'undefined'</code>.
+						You see, {} is neither <pre>null</pre> nor <pre>=== typeof 'undefined'</pre>.
 						It's pre-populated with several properties by the JavaScript interpreter. The following
 						code snippet determines whether or not only these pre-populated properties are in the
 						object or additional properties have been added.
 						<br />
 						<pre>
-						<code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+						<code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 function isEmpty(obj) {
     if (Object.keys ) {
         return Object.keys(obj).length === 0;
@@ -183,14 +169,12 @@ function isEmpty(obj) {
     }
     return true;
 }
-						</code></pre>
+						</code>
+						</pre>
 					</section>
 					<section>
-						<h2>Basement Level 3</h2>
+						<h2>End of this thread</h2>
 						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
 					</section>
 				</section>
 
@@ -201,23 +185,26 @@ function isEmpty(obj) {
 				        <li>Allow you to organize your code better</li>
 				        <li>Allow you to be one of the cool kids</li>
 				    </ul>
-				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-				     var MySpace = {};
-				     MySpace.size = 42;
-				     MySpace.motivation = 'free beer';
-				     MySpace.dump = function () {
-				         console.log('size:       ' + MySpace.size +
-				                     'motivation: ' + MySpace.motivation);
-				     };
-				     MySpace.dump();
-				     </code></pre>
+				    <pre>
+				    <code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+var MySpace = {};
+MySpace.size = 42;
+MySpace.motivation = 'free beer';
+MySpace.dump = function () {
+    console.log(
+    'size:       ' + MySpace.size +
+    'motivation: ' + MySpace.motivation);
+};
+MySpace.dump();
+				     </code>
+				     </pre>
 				</section>
 
 				<section>
 					<h3>Problems:</h3>
 					<ul>
 						<li>What if the properties are already defined and you overwrite them?</li>
-						<li>What if MySpace already exists and you write <code><pre>MySpace = {}</pre></code>?</li>
+						<li>What if MySpace already exists and you write <pre>MySpace = {}</pre></li>
 					</ul>
 					<p>You need a function that checks if any parts of your namespace already exists,
 					and only creates the parts that don't exist yet
@@ -235,7 +222,7 @@ function isEmpty(obj) {
 
 				<section>
 					<h3>A namespace function:</h3>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+					<pre><code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 // creates the MySpace namespace if it doesn't yet exist
 var MySpace = MySpace || {};
 MySpace.namespace = function (ns_string) {
@@ -279,9 +266,9 @@ MySpace.namespace('MySpace.area51.saucers.roswell');
 				<section>
 					<h3>Beyond the Object Literal:
 					Prerequisites to a JavaScript Module</h3>
-					<p>The previous example isn't as clean as it could be. Immediately-invoked function expressions
+					<p>The previous example can be improved. Immediately-invoked function expressions
 					(IIFE's) can help:</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+					<pre><code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 MySpace.namespace('MySpace.myMod');
 MySpace.myMod = (function () {
     var priv1 = 'I am private',
@@ -290,17 +277,17 @@ MySpace.myMod = (function () {
     mymod = {
         getPrivates : function () {
             var privArr = [priv1, priv2];
-                return privArr;
+            return privArr;
         }
     };
     return mymod;
 })();
 					</code></pre>
-					<p style="font-size: 28px;">What this odd construct does for us:</p>
+					<p style="font-size: 28px;">What this odd-looking construct does for us:</p>
 					<ul style="font-size: 28px;">
 						<li>All variables are encapsulated in the MySpace.myMod namespace</li>
 						<li>Provides a structured interface to the consumers of our API</li>
-						<li>We can change the inner workings of our module without affecting the consumers of it</li>
+						<li>We can change our module implementation without affecting the consumers of it</li>
 						<li>Our module self-initializes by virtue of its immediate invocation (cool feature of JavaScript)</li>
 					</ul>
 				</section>
@@ -308,7 +295,7 @@ MySpace.myMod = (function () {
 				<section>
 					<h3></h3>
 					<p style="font-size: 28px;">A bigger, badder module:</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+					<pre><code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 MySpace.namespace('MySpace.area51');
 MySpace.area51 = (function () {
     var numSaucers = 42,
@@ -336,13 +323,6 @@ for (locIndex = 0; locIndex < numLocations; locIndex += 1) {
     console.log('saucer spotted in ' + sightingLocations[locIndex]);
 }
 					</code></pre>
-				<!--
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol> -->
 				</section>
 
 				<section>
@@ -350,7 +330,7 @@ for (locIndex = 0; locIndex < numLocations; locIndex += 1) {
 				<p>"Wait a minute," I hear you saying, "after the nice module definition, you string out
 				a bunch of variables in the global namespace, violating your one-global-variable rule."
 				True. Here's one way to fix that:</p>
-				<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+				<pre><code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 (function () { // surprise, yet another IIFE
     var myarea = MySpace.area51,
         sightingLocations = myarea.getSightings(),
@@ -366,7 +346,7 @@ for (locIndex = 0; locIndex < numLocations; locIndex += 1) {
 				<section>
 				<h3>Here's another way to fix it, using jQuery to allow us to defer initialization until
 				the DOM is fully loaded</h3>
-				<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+				<pre><code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 $(function () { // won't be called until assets are loaded. REQUIRES jQuery
     var myarea = MySpace.area51,
         sightingLocations = myarea.getSightings(),
@@ -380,7 +360,7 @@ $(function () { // won't be called until assets are loaded. REQUIRES jQuery
 				</code></pre>
 				</section>
 				<section>
-				<h3>An AMD module example</h3>
+				<h3></h3>
 				</section>
 				<!-- <section data-markdown>
 				
@@ -402,6 +382,7 @@ $(function () { // won't be called until assets are loaded. REQUIRES jQuery
 					
 				</section>
 -->
+<!--
 				<section id="transitions">
 					<h2>Transition Styles</h2>
 					<p>
@@ -416,7 +397,7 @@ $(function () { // won't be called until assets are loaded. REQUIRES jQuery
 						<a href="?#/transitions">Default</a>
 					</p>
 				</section>
-
+-->
 				<section id="themes">
 					<h2>Themes</h2>
 					<p>
