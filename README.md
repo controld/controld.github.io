@@ -1,3 +1,3 @@
 controld.github.io
 ==================
-Slides, presentations, freaky front-end code
+Current: a JavaScript module pattern
